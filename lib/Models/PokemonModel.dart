@@ -1,9 +1,9 @@
 class PokemonModel {
   int id;
   String name;
-  String attack;
-  String defense;
-  String hp;
+  int attack;
+  int defense;
+  int hp;
   String type;
   String sprite_front;
 

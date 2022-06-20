@@ -27,7 +27,7 @@ class PokemonWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text("hola"),
+            Text("Añadir a favoritos"),
             Icon(Icons.heart_broken_rounded)
           ],
         ),
@@ -36,8 +36,8 @@ class PokemonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("pokemon nro: 23", style: TextStyle(color: textColor),),
-            Text("pokemon name", style: TextStyle(color: textColor, fontSize: 26),),
+            Text(pokemon.id.toString(), style: TextStyle(color: textColor),),
+            Text(pokemon.name, style: TextStyle(color: textColor, fontSize: 26),),
           ],
 
 
@@ -47,7 +47,7 @@ class PokemonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 100),
+              padding: EdgeInsets.only(top: 200),
 
               //image & stats stack
               child: Stack(
@@ -63,7 +63,7 @@ class PokemonWidget extends StatelessWidget {
                   ),
                   Positioned(
                     top: -80,
-                    child: Image.network('https://picsum.photos/250?image=2',width: 150,height: 160,),
+                    child: Image.network(pokemon.sprite_front,),
                   ),
 
                 Padding(
@@ -76,17 +76,27 @@ class PokemonWidget extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "attack",onlyRight: false, res: "100" ,),),
+                            StatsCardBorderWidget(
+                              inside: StatsCardWidget(
+                              height: 60,
+                              width: 60,
+                              radius: 8,
+                              color: Colors.green,
+                              hint: "Attack",
+                              onlyRight: false,
+                              res: pokemon.attack.toString(),
+                            ),
+                            ),
                             Spacer(),
-                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),),
+                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: pokemon.defense.toString(),),),
                           ],
                         ),
                         SizedBox(height: 20,),
                         Row(
                           children: [
-                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "HP",onlyRight: false, res: "100" ,),),
+                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "HP",onlyRight: false, res: pokemon.hp.toString() ,),),
                             Spacer(),
-                            StatsCardBorderWidget(inside: const Center(child: Text("type: Fire", textAlign: TextAlign.center,),)),
+                            StatsCardBorderWidget(inside: Center(child: Text("type: ${pokemon.hp.toString()}", textAlign: TextAlign.center,),)),
                           ],
                         ),
                         SizedBox(height: 30,),
