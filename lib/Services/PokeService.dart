@@ -1,10 +1,12 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:http/http.dart';
+
+import '../Stores/pokemons.dart';
 
 class PokeService{
 
@@ -24,7 +26,7 @@ class PokeService{
 
     }else{
       var responsejson = json.decode(response.body);
-      pokeStore.setPokemon(responsejson);
+      pokeStore.setPokemons(responsejson);
 
     }
 
