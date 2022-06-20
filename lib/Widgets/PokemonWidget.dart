@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
+import 'package:poke_app_demo/Pages/FavoritesPage.dart';
 import 'package:poke_app_demo/Services/PokeService.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
@@ -27,8 +30,14 @@ class PokemonWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text("Añadir a favoritos"),
-            Icon(Icons.heart_broken_rounded)
+            ElevatedButton.icon(
+              onPressed: () {Get.to(FavoritePage());},
+              icon: const Icon( // <-- Icon
+                Icons.heart_broken,
+                size: 24.0,
+              ),
+              label: Text('My Favorites'), // <-- Text
+            ),
           ],
         ),
 
@@ -36,7 +45,7 @@ class PokemonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(pokemon.id.toString(), style: TextStyle(color: textColor),),
+            Text("Pokemon nro: ${pokemon.id.toString()}", style: TextStyle(color: textColor),),
             Text(pokemon.name, style: TextStyle(color: textColor, fontSize: 26),),
           ],
 
@@ -63,7 +72,7 @@ class PokemonWidget extends StatelessWidget {
                   ),
                   Positioned(
                     top: -80,
-                    child: Image.network(pokemon.sprite_front,),
+                    child: Image.network(pokemon.sprite_front,height: 200, width: 200, fit: BoxFit.fill,),
                   ),
 
                 Padding(
