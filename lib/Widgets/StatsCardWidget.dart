@@ -22,20 +22,17 @@ class StatsCardWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-
             Container(
               width:150,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(8),
-                ),
-              ),
+                ),),
               child: Row(
                 children: [
                   Container(
                     width: 80,
                     height: 60,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(7),
 
@@ -43,16 +40,15 @@ class StatsCardWidget extends StatelessWidget {
                   ),
                     child: Center(
                       child: Text(hint, textAlign: TextAlign.center,),
-
                     ),
                   ),
-                  SizedBox(width: 12,),
-                  Text(res),
+                  const SizedBox(width: 12,),
+                  Center(
+                    child: Text(res, textAlign: TextAlign.center,),
+                  )
                 ],
               ),
             )
-
-
 
           ],
         )

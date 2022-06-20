@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
+import 'StatsCardBorderWidget.dart';
+
 class PokemonWidget extends StatelessWidget {
 
   Color textColor = Colors.white;
@@ -36,6 +38,8 @@ class PokemonWidget extends StatelessWidget {
 
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.only(top: 100),
@@ -60,13 +64,39 @@ class PokemonWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(top: 100),
                   // stats column
-                  child: Column(
-                    children: [
-                      StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),
-                      StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    //Stats
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "attack",onlyRight: false, res: "100" ,),),
+                            Spacer(),
+                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),),
+                          ],
+                        ),
+                        SizedBox(height: 20,),
+                        Row(
+                          children: [
+                            StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "HP",onlyRight: false, res: "100" ,),),
+                            Spacer(),
+                            StatsCardBorderWidget(inside: const Center(child: Text("type: Fire", textAlign: TextAlign.center,),)),
+                          ],
+                        ),
+                        SizedBox(height: 30,),
+                        ElevatedButton(onPressed: ()=>{}, child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
+                          primary: Colors.black54,
+                          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+                        ),)
 
-                  ),
+
+
+
+                      ],
+
+                    ),
+                  )
                 )
                 ],
               ),
