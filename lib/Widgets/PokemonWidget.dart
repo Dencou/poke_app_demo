@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Services/PokeService.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
 import 'StatsCardBorderWidget.dart';
 
 class PokemonWidget extends StatelessWidget {
+
+  PokemonModel pokemon;
+  PokemonWidget({required this.pokemon});
+
 
   Color textColor = Colors.white;
   Color typeColor = Colors.green;
@@ -14,7 +19,6 @@ class PokemonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 34, horizontal: 20),
-
         // main column
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

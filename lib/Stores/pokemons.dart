@@ -9,7 +9,18 @@ class PokeStore = PokeStoreBase with _$PokeStore;
 
 abstract class PokeStoreBase with Store {
   @observable
-  List<PokemonModel> pokemons = [];
+  List<PokemonModel> pokemons = [
+    PokemonModel(1, "pokachu", "23", "123", "23", "asdas", "fire"),
+    PokemonModel(1, "pokachu", "23", "123", "23", "asdas", "fire"),
+    PokemonModel(1, "pokachu", "23", "123", "23", "asdas", "fire"),
+    PokemonModel(1, "pokachu", "23", "123", "23", "asdas", "fire"),
+  ];
+
+  @action
+  void addPokemon(pokemon){
+    pokemons.add(pokemon);
+
+  }
 
   @action
   void setPokemons(pokemons) {
