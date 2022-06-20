@@ -64,7 +64,17 @@ class PokemonWidget extends StatelessWidget {
                       Row(
                         children: [
 
-                          Container()
+                          Container(
+                            width: 80,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(6),),
+                            child: Center(
+                              child: Text("attack", textAlign: TextAlign.center,),
+                            ),
+                          ),
+                          Container(),
 
                         ],
                       )
