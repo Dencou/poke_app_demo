@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     //});
 
     return Scaffold(
-        backgroundColor: Colors.green,
+
 
         body: Observer(builder: (BuildContext context) {
           return PageView(

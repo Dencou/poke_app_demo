@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Stores/pokemons.dart';
 
 class StatsCardWidget extends StatelessWidget {
 
@@ -32,8 +33,8 @@ class StatsCardWidget extends StatelessWidget {
                   Container(
                     width: 80,
                     height: 60,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
+                    decoration: BoxDecoration(
+                      color: pokeStore.pokemons[0].colorType,
                       borderRadius: BorderRadius.all(Radius.circular(7),
                     ),
                   ),

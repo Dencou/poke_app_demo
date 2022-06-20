@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class PokemonModel {
   int id;
   String name;
@@ -6,6 +8,7 @@ class PokemonModel {
   int hp;
   String type;
   String sprite_front;
+  Color colorType;
 
   PokemonModel(
       this.id,
@@ -14,7 +17,8 @@ class PokemonModel {
       this.defense,
       this.hp,
       this.sprite_front,
-      this.type
+      this.type,
+      this.colorType,
       );
 
 
