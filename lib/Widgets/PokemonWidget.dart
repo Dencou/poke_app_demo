@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
 class PokemonWidget extends StatelessWidget {
 
@@ -64,17 +65,8 @@ class PokemonWidget extends StatelessWidget {
                       Row(
                         children: [
 
-                          Container(
-                            width: 80,
-                            height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(6),),
-                            child: Center(
-                              child: Text("attack", textAlign: TextAlign.center,),
-                            ),
-                          ),
-                          Container(),
+                          StatsCardWidget(height: 40, width: 100, radius: 8, color: Colors.red, text: "Attack")
+
 
                         ],
                       )
