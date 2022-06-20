@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Services/PokeService.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
 import 'StatsCardBorderWidget.dart';
@@ -85,7 +86,7 @@ class PokemonWidget extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 30,),
-                        ElevatedButton(onPressed: ()=>{}, child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
+                        ElevatedButton(onPressed: ()=>{pokeService.getPokemonById(45)}, child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
                           primary: Colors.black54,
                           padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
                         ),)

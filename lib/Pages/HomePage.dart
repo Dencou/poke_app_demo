@@ -12,13 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.green,
 
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        controller: controller,
-        children: [
-          
-        ],
-      ),
+      body: PokemonWidget(),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:mobx/mobx.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
-import 'package:mobx_codegen/mobx_codegen.dart';
 
 
 
@@ -13,7 +12,7 @@ abstract class PokeStoreBase with Store {
   List<PokemonModel> pokemons = [];
 
   @action
-  void setPokemons(List<PokemonModel> pokemons) {
+  void setPokemons(pokemons) {
 
     this.pokemons = pokemons;
 

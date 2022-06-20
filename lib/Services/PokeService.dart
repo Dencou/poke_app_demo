@@ -27,7 +27,7 @@ class PokeService{
     }else{
       var responsejson = json.decode(response.body);
       pokeStore.setPokemons(responsejson);
-
+      print(pokeStore.pokemons[0].name);
     }
 
 
