@@ -46,7 +46,7 @@ class PokemonWidget extends StatelessWidget {
                 fit: StackFit.loose,
                 children: <Widget>[
                   Container(
-                      height: 250,
+                      height: 350,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -62,15 +62,10 @@ class PokemonWidget extends StatelessWidget {
                   // stats column
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-
-                          StatsCardWidget(height: 40, width: 100, radius: 8, color: Colors.red, text: "Attack")
-
-
-                        ],
-                      )
+                      StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),
+                      StatsCardWidget(height: 60, width: 60, radius: 8, color: Colors.green, hint: "defense",onlyRight: false, res: "100" ,),
                     ],
+
                   ),
                 )
                 ],
