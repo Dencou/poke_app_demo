@@ -35,7 +35,6 @@ class StatsCardWidget extends StatelessWidget {
                     decoration: const BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(7),
-
                     ),
                   ),
                     child: Center(

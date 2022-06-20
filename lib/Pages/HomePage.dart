@@ -6,10 +6,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final PageController controller = PageController();
+
     return Scaffold(
       backgroundColor: Colors.green,
 
-      body: PokemonWidget(),
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        controller: controller,
+        children: [
+          
+        ],
+      ),
     );
   }
 }
