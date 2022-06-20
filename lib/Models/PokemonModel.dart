@@ -2,7 +2,7 @@ class PokemonModel {
   int id;
   String name;
   String attack;
-  String deffence;
+  String defense;
   String hp;
   String type;
   String sprite_front;
@@ -11,7 +11,7 @@ class PokemonModel {
       this.id,
       this.name,
       this.attack,
-      this.deffence,
+      this.defense,
       this.hp,
       this.sprite_front,
       this.type
