@@ -15,8 +15,11 @@ class StatsCardBorderWidget extends StatelessWidget {
         minHeight: 60
       ),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade100),
-        borderRadius: const BorderRadius.all(Radius.circular(8),
+        border: Border.all(
+            color: Colors.grey.shade100
+        ),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8),
         ),
       ),
       child: inside,

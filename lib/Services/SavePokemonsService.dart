@@ -3,7 +3,6 @@ import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:localstore/localstore.dart';
 
-import '../Models/SaveModel.dart';
 
 class SavePokemonsService {
 

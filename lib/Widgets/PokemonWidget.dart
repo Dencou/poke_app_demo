@@ -4,14 +4,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Pages/FavoritesPage.dart';
-import 'package:poke_app_demo/Services/PokeService.dart';
 import 'package:poke_app_demo/Services/SavePokemonsService.dart';
-import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../Models/SaveModel.dart';
 import 'StatsCardBorderWidget.dart';
+
 
 class PokemonWidget extends StatelessWidget {
 
