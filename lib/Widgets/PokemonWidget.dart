@@ -45,12 +45,31 @@ class PokemonWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   ),
                   icon: const Icon( // <-- Icon
+                    Icons.search,
+                    size: 24.0,
+                  ),
+                  label: const Text('Search for a pokemon'), // <-- Text
+                ),
+
+                ElevatedButton.icon(
+                  onPressed: () async {
+                    await savePokemonsService.findAll().then((value) => print(value));
+                    Get.to(const FavoritePage());
+                  },
+                  style: ElevatedButton.styleFrom(
+                    elevation : 0,
+                    primary: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  ),
+                  icon: const Icon( // <-- Icon
                     Icons.favorite,
                     size: 24.0,
                   ),
                   label: const Text('My Favorites'), // <-- Text
                 ),
+
               ],
+
             ),
             //top texts
             Column(
