@@ -15,11 +15,12 @@ class DetailedPokemonPage extends StatelessWidget {
     var a = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.black),
-          title: const Text("My Favorites",style: TextStyle(color: Colors.black),),
+          title: Text("${a.name}",style: TextStyle(color: Colors.black),),
         ),
       body: SingleChildScrollView(
         child: Column(
@@ -35,7 +36,7 @@ class DetailedPokemonPage extends StatelessWidget {
                       height: 350,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: a.getColor(),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       )
                   ),
@@ -71,6 +72,7 @@ class DetailedPokemonPage extends StatelessWidget {
                         //Stats
                         child: Column(
                           children: [
+                            Text('hola'),
                             Row(
                               children: [
                                 StatsCardBorderWidget(
@@ -78,20 +80,58 @@ class DetailedPokemonPage extends StatelessWidget {
                                       height: 80,
                                       width: 80,
                                       radius: 8,
-                                      color: Colors.red,
+                                      color: a.getColor(),
                                       hint: "hola",
                                       res: "test",
                                       onlyRight: false,
-                                      blackRes: false,
+                                      blackRes: true,
                                       blackHint: false,
                                     )
-                                )
+                                ),
+                                Spacer(),
+                                StatsCardBorderWidget(
+                                    inside: StatsCardWidget(
+                                      height: 80,
+                                      width: 80,
+                                      radius: 8,
+                                      color: a.getColor(),
+                                      hint: "hola",
+                                      res: "test",
+                                      onlyRight: false,
+                                      blackRes: true,
+                                      blackHint: false,
+                                    )
+                                ),
 
                               ],
                             ),
                             const SizedBox(height: 20,),
                             Row(
-                              children: [Text("hola"),
+                              children: [
+                                StatsCardBorderWidget(
+                                    inside: StatsCardWidget(
+                                      height: 80,
+                                      width: 80,
+                                      radius: 8,
+                                      color: a.getColor(),
+                                      hint: "hola",
+                                      res: "test",
+                                      onlyRight: false,
+                                      blackRes: true,
+                                      blackHint: false,
+                                    ),
+                                ),
+                                Spacer(),
+                                StatsCardBorderWidget(
+                                    inside: Center(
+                                      child: Text(
+                                          'Type:test',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )
+                                ),
+
+
                             ]
                             ),
 

@@ -25,7 +25,7 @@ class FavoriteCard extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(25),
               child: Container(
                 decoration: BoxDecoration(
                   color: saveModel.getColor(),
