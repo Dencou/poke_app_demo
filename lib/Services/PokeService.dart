@@ -8,9 +8,6 @@ import '../Stores/pokemons.dart';
 
 class PokeService{
 
-
-
-
   Future getPokemonById(id) async {
     var url = Uri.parse('https://pokeapi.co/api/v2/pokemon/$id');
     var response = await http.get(url);
@@ -29,11 +26,6 @@ class PokeService{
 
     pokeStore.addPokemon(pokemonModel);
 
-    print(pokemon["id"]);
-
   }
-
-
-
 }
 var pokeService = PokeService();

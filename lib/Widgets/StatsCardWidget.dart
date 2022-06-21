@@ -63,7 +63,7 @@ class StatsCardWidget extends StatelessWidget {
                     child: Text(
                       res,
                       textAlign: TextAlign.center,
-                      style: black ? TextStyle(color: Colors.black) : TextStyle(color: Colors.white),
+                      style: black ? const TextStyle(color: Colors.black) : const TextStyle(color: Colors.white),
                     ),
                   )
                 ],

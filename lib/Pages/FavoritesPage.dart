@@ -12,11 +12,6 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    print("build list");
-
-
-
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

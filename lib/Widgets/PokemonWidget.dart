@@ -37,9 +37,7 @@ class PokemonWidget extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () async {
                     await savePokemonsService.findAll().then((value) => print(value));
-
                     Get.to(const FavoritePage());
-
                   },
                   style: ElevatedButton.styleFrom(
                     elevation : 0,
@@ -73,10 +71,7 @@ class PokemonWidget extends StatelessWidget {
                   ),
                 ),
               ],
-
-
             ),
-            //
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -106,7 +101,6 @@ class PokemonWidget extends StatelessWidget {
                           fit: BoxFit.fill,
                         ),
                       ),
-
                       Padding(
                           padding: const EdgeInsets.only(
                               top: 100
