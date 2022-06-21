@@ -35,7 +35,7 @@ class PokemonModel {
       "colorType": colorType,
     };
   }
-
+// no se me ocurrio otra cosa jaja
   Color getColor(){
     if(type == "fire"){
       return Colors.red;
@@ -55,8 +55,7 @@ class PokemonModel {
       return Colors.brown;
     }else if(type == "bug"){
       return Colors.lightGreen;
-    }
-    else if(type == "flying"){
+    } else if(type == "flying"){
       return Colors.lightBlue;
     }else if(type == "normal"){
       return Colors.grey;
@@ -81,5 +80,4 @@ class PokemonModel {
         e["colorType"]
     );
   }
-
 }

@@ -1,6 +1,5 @@
 import 'package:mobx/mobx.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
-import 'package:poke_app_demo/Models/SaveModel.dart';
 
 part 'save-pokemons.g.dart';
 
