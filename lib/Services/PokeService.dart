@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
+import 'package:poke_app_demo/Models/SaveModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -12,24 +13,6 @@ import '../Stores/pokemons.dart';
 
 class PokeService{
 
-
-
-  void savePokemon()async{
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setStringList("favs", [
-      "",
-      "",
-      "",
-
-    ]);
-
-}
-
-  getSavedPokemons()async{
-    final prefs = await SharedPreferences.getInstance();
-
-
-  }
 
   Color findColor(type){
     if(type == "fire"){

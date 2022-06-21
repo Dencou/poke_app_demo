@@ -5,8 +5,11 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Pages/FavoritesPage.dart';
 import 'package:poke_app_demo/Services/PokeService.dart';
+import 'package:poke_app_demo/Services/SavePokemonsService.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../Models/SaveModel.dart';
 import 'StatsCardBorderWidget.dart';
 
 class PokemonWidget extends StatelessWidget {
@@ -34,7 +37,9 @@ class PokemonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {Get.to(FavoritePage());},
+                  onPressed: () async {
+                    Get.to(FavoritePage());
+                  },
                   icon: const Icon( // <-- Icon
                     Icons.heart_broken,
                     size: 24.0,
@@ -112,9 +117,16 @@ class PokemonWidget extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(height: 30,),
-                                ElevatedButton(onPressed: ()=>{pokeService.getPokemonById(45)}, child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
-                                  primary: Colors.black54,
-                                  padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+                                ElevatedButton(onPressed: () async{
+                                  
+                                  savePokemonsService.savePokemons(SaveModel(id:pokemon.id, name: pokemon.name, sprites: pokemon.sprite_front));
+                                  //Get.to(FavoritePage());
+
+
+                                },
+                                  child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
+                                    primary: Colors.black54,
+                                    padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
                                 ),)
 
 

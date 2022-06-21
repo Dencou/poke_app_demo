@@ -29,6 +29,17 @@ mixin _$PokeStore on PokeStoreBase, Store {
       ActionController(name: 'PokeStoreBase', context: context);
 
   @override
+  void addPokemon(PokemonModel pokemon) {
+    final _$actionInfo = _$PokeStoreBaseActionController.startAction(
+        name: 'PokeStoreBase.addPokemon');
+    try {
+      return super.addPokemon(pokemon);
+    } finally {
+      _$PokeStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void setPokemons(dynamic pokemons) {
     final _$actionInfo = _$PokeStoreBaseActionController.startAction(
         name: 'PokeStoreBase.setPokemons');
