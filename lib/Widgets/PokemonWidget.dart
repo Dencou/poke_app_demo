@@ -6,6 +6,7 @@ import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Pages/FavoritesPage.dart';
 import 'package:poke_app_demo/Services/PokeService.dart';
 import 'package:poke_app_demo/Services/SavePokemonsService.dart';
+import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -118,13 +119,13 @@ class PokemonWidget extends StatelessWidget {
                                 ),
                                 SizedBox(height: 30,),
                                 ElevatedButton(onPressed: () async{
-                                  
-                                  savePokemonsService.savePokemons(SaveModel(id:pokemon.id, name: pokemon.name, sprites: pokemon.sprite_front));
+                                  savePokemonsService.savePokemonss();
+                                  //savePokemonsService.savePokemons(SaveModel(id:pokemon.id, name: pokemon.name, sprites: pokemon.sprite_front));
                                   //Get.to(FavoritePage());
 
 
                                 },
-                                  child: Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
+                                  child: const Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
                                     primary: Colors.black54,
                                     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
                                 ),)
