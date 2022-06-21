@@ -41,9 +41,6 @@ class _HomePageState extends State<HomePage> {
               var id = pokeStore.pokemons[pageCount].id + 1;
               pokeService.getPokemonById(id);
 
-              //if(currentPageNumber == pageCount){
-                //pokeStore.addPokemon(PokemonModel(1, "pokachu", 23, 12, 23, "asdas", "fire"));
-              //}
             },
             controller: controller,
             scrollDirection: Axis.vertical,

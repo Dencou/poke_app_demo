@@ -14,46 +14,13 @@ import '../Stores/pokemons.dart';
 class PokeService{
 
 
-  Color findColor(type){
-    if(type == "fire"){
-      return Colors.red;
-    }else if(type == "water"){
-      return Colors.blue;
-    }else if(type == "grass"){
-      return Colors.green;
-    }else if(type == "fairy"){
-      return Colors.purpleAccent;
-    }else if(type == "electric"){
-      return Colors.yellow;
-    }else if(type == "psychic"){
-      return Colors.deepPurpleAccent;
-    }else if(type == "rock"){
-      return Colors.brown;
-    }else if(type == "ground"){
-      return Colors.brown;
-    }else if(type == "bug"){
-      return Colors.lightGreen;
-    }
-    else if(type == "flying"){
-      return Colors.lightBlue;
-    }else if(type == "normal"){
-      return Colors.grey;
-    }else if(type == "poison"){
-      return Colors.deepPurple;
-    }
-    else{
-      return Colors.black;
-    }
 
-
-  }
 
   Future getPokemonById(id) async {
     var url = Uri.parse('https://pokeapi.co/api/v2/pokemon/$id');
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
 
-    var color = findColor(pokemon["types"][0]["type"]["name"]);
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
@@ -62,7 +29,7 @@ class PokeService{
         pokemon["stats"][5]["base_stat"],
         pokemon["sprites"]["front_default"],
         pokemon["types"][0]["type"]["name"],
-        pokemon["types"][0]["type"]["name"]
+        0xFFB74093
     );
 
     pokeStore.addPokemon(pokemonModel);

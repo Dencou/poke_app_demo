@@ -14,7 +14,6 @@ class SavePokemonsService {
   createPokemon(PokemonModel poke) async {
     final id = db.collection(collection).doc().id;
 
-// save the item
     print('save');
     await db.collection(collection).doc(id).set(poke.toDynamic());
   }
