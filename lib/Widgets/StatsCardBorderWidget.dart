@@ -11,16 +11,15 @@ class StatsCardBorderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width:155,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         minHeight: 60
       ),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade100),
-        borderRadius: BorderRadius.all(Radius.circular(8),
+        borderRadius: const BorderRadius.all(Radius.circular(8),
         ),
       ),
       child: inside,
-
     );
   }
 }

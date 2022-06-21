@@ -12,7 +12,17 @@ class StatsCardWidget extends StatelessWidget {
   Color color;
   bool onlyRight;
 
-  StatsCardWidget({required this.height, required this.width, required this.radius, required this.color, required this.hint,required this.onlyRight, required this.res});
+  StatsCardWidget(
+      {
+        required this.height,
+        required this.width,
+        required this.radius,
+        required this.color,
+        required this.hint,
+        required this.onlyRight,
+        required this.res
+      }
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +36,10 @@ class StatsCardWidget extends StatelessWidget {
             Container(
               width:150,
               decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(8),
-                ),),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
               child: Row(
                 children: [
                   Container(
@@ -35,16 +47,23 @@ class StatsCardWidget extends StatelessWidget {
                     height: 60,
                     decoration: BoxDecoration(
                       color: color,
-                      borderRadius: BorderRadius.all(Radius.circular(7),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(7),
                     ),
                   ),
                     child: Center(
-                      child: Text(hint, textAlign: TextAlign.center,),
+                      child: Text(
+                        hint,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12,),
                   Center(
-                    child: Text(res, textAlign: TextAlign.center,),
+                    child: Text(
+                      res,
+                      textAlign: TextAlign.center,
+                    ),
                   )
                 ],
               ),

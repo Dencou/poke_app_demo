@@ -26,7 +26,10 @@ class PokemonWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: pokemon.getColor(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 34, horizontal: 20),
+        padding: const EdgeInsets.symmetric(
+            vertical: 34,
+            horizontal: 20
+        ),
         // main column
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,31 +46,41 @@ class PokemonWidget extends StatelessWidget {
                     Icons.heart_broken,
                     size: 24.0,
                   ),
-                  label: Text('My Favorites'), // <-- Text
+                  label: const Text('My Favorites'), // <-- Text
                 ),
               ],
             ),
-
+            //top texts
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Pokemon nro: ${pokemon.id.toString()}", style: TextStyle(color: textColor),),
-                Text(pokemon.name, style: TextStyle(color: textColor, fontSize: 26),),
+                Text(
+                  "Pokemon nro: ${pokemon.id.toString()}",
+                  style: TextStyle(color: textColor
+                  ),
+                ),
+                Text(
+                  pokemon.name,
+                  style: TextStyle(
+                      color: textColor,
+                      fontSize: 26),
+                ),
               ],
 
 
             ),
+            //
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 150),
-
                   //image & stats stack
                   child: Stack(
-                    clipBehavior: Clip.none, alignment: AlignmentDirectional.topCenter,
+                    clipBehavior: Clip.none,
+                    alignment: AlignmentDirectional.topCenter,
                     fit: StackFit.loose,
                     children: <Widget>[
                       Container(
@@ -75,18 +88,28 @@ class PokemonWidget extends StatelessWidget {
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),)
+                            borderRadius: BorderRadius.circular(10),
+                          )
                       ),
                       Positioned(
                         top: -80,
-                        child: Image.network(pokemon.sprite_front,height: 200, width: 200, fit: BoxFit.fill,),
+                        child: Image.network(
+                          pokemon.sprite_front,
+                          height: 200,
+                          width: 200,
+                          fit: BoxFit.fill,
+                        ),
                       ),
 
                       Padding(
-                          padding: const EdgeInsets.only(top: 100),
+                          padding: const EdgeInsets.only(
+                              top: 100
+                          ),
                           // stats column
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10
+                            ),
                             //Stats
                             child: Column(
                               children: [
@@ -117,7 +140,7 @@ class PokemonWidget extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 20,),
+                                const SizedBox(height: 20,),
                                 Row(
                                   children: [
                                     StatsCardBorderWidget(
@@ -131,7 +154,7 @@ class PokemonWidget extends StatelessWidget {
                                         res: pokemon.hp.toString(),
                                       ),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     StatsCardBorderWidget(
                                         inside: Center(
                                           child: Text(
@@ -145,11 +168,12 @@ class PokemonWidget extends StatelessWidget {
                                 ElevatedButton(onPressed: () async{
                                   savePokemonsService.createPokemon(pokemon);
                                 },
-                                  child: const Text("Yo te elijo :D"),
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.black54,
                                     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
-                                ),)
+                                ),
+                                  child: const Text("Yo te elijo :D"),
+                                )
                               ],
                             ),
                           )
