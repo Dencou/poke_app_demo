@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:poke_app_demo/Widgets/FavoriteCard.dart';
+import 'package:poke_app_demo/Widgets/StatsCardBorderWidget.dart';
+import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
 class DetailedPokemonPage extends StatelessWidget {
 
@@ -13,11 +15,17 @@ class DetailedPokemonPage extends StatelessWidget {
     var a = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          iconTheme: const IconThemeData(color: Colors.black),
+          title: const Text("My Favorites",style: TextStyle(color: Colors.black),),
+        ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 130, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 10),
               child: Stack(
                 clipBehavior: Clip.none,
                 alignment: AlignmentDirectional.topCenter,
@@ -27,7 +35,7 @@ class DetailedPokemonPage extends StatelessWidget {
                       height: 350,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: a.getColor(),
                         borderRadius: BorderRadius.circular(10),
                       )
                   ),
@@ -36,16 +44,16 @@ class DetailedPokemonPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.network(
-                          'https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                          height: 150,
-                          width: 150,
+                          a.sprite_front,
+                          height: 200,
+                          width: 200,
                           fit: BoxFit.fill,
                         ),
                         const SizedBox(width: 30,),
                         Image.network(
-                          'https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                          height: 150,
-                          width: 150,
+                          a.sprite_back,
+                          height: 200,
+                          width: 200,
                           fit: BoxFit.fill,
                         ),
                       ],
@@ -64,7 +72,22 @@ class DetailedPokemonPage extends StatelessWidget {
                         child: Column(
                           children: [
                             Row(
-                              children: [Text("hola")],
+                              children: [
+                                StatsCardBorderWidget(
+                                    inside: StatsCardWidget(
+                                      height: 80,
+                                      width: 80,
+                                      radius: 8,
+                                      color: Colors.red,
+                                      hint: "hola",
+                                      res: "test",
+                                      onlyRight: false,
+                                      blackRes: false,
+                                      blackHint: false,
+                                    )
+                                )
+
+                              ],
                             ),
                             const SizedBox(height: 20,),
                             Row(
