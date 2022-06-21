@@ -45,7 +45,7 @@ class PokemonWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   ),
                   icon: const Icon( // <-- Icon
-                    Icons.heart_broken,
+                    Icons.favorite,
                     size: 24.0,
                   ),
                   label: const Text('My Favorites'), // <-- Text
