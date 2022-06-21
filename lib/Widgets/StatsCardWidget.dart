@@ -8,6 +8,7 @@ class StatsCardWidget extends StatelessWidget {
   double radius;
   String hint;
   String res;
+  bool black;
   Color color;
   bool onlyRight;
 
@@ -19,7 +20,8 @@ class StatsCardWidget extends StatelessWidget {
         required this.color,
         required this.hint,
         required this.onlyRight,
-        required this.res
+        required this.res,
+        required this.black
       }
         );
 
@@ -51,7 +53,7 @@ class StatsCardWidget extends StatelessWidget {
                       child: Text(
                         hint,
                         textAlign: TextAlign.center,
-                        style:TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white),
 
                       ),
                     ),
@@ -61,7 +63,7 @@ class StatsCardWidget extends StatelessWidget {
                     child: Text(
                       res,
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
+                      style: black ? TextStyle(color: Colors.black) : TextStyle(color: Colors.white),
                     ),
                   )
                 ],

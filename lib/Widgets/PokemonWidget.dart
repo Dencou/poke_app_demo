@@ -36,7 +36,10 @@ class PokemonWidget extends StatelessWidget {
               children: [
                 ElevatedButton.icon(
                   onPressed: () async {
+                    await savePokemonsService.findAll().then((value) => print(value));
+
                     Get.to(const FavoritePage());
+
                   },
                   style: ElevatedButton.styleFrom(
                     elevation : 0,
@@ -127,6 +130,7 @@ class PokemonWidget extends StatelessWidget {
                                         hint: "Attack",
                                         onlyRight: false,
                                         res: pokemon.attack.toString(),
+                                        black: true,
                                       ),
                                     ),
                                     const Spacer(),
@@ -139,6 +143,7 @@ class PokemonWidget extends StatelessWidget {
                                         hint: "defense",
                                         onlyRight: false,
                                         res: pokemon.defense.toString(),
+                                        black: true,
                                       ),
                                     ),
                                   ],
@@ -155,6 +160,7 @@ class PokemonWidget extends StatelessWidget {
                                         hint: "HP",
                                         onlyRight: false,
                                         res: pokemon.hp.toString(),
+                                        black: true,
                                       ),
                                     ),
                                     const Spacer(),

@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
             onPageChanged: (currentPageNumber) {
               var pageCount =  pokeStore.pokemons.length - 1;
               var id = pokeStore.pokemons[pageCount].id += 1;
+              print("page count =========> ${pageCount}", );
               pokeService.getPokemonById(id);
 
             },

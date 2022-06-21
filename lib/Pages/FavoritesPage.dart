@@ -14,7 +14,8 @@ class FavoritePage extends StatelessWidget {
 
     print("build list");
 
-    savePokemonsService.findAll().then((value) => print(value));
+
+
 
     return Scaffold(
       appBar: AppBar(
