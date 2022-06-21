@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
 
+import '../Services/SavePokemonsService.dart';
+
 class FavoriteCard extends StatelessWidget {
 
   PokemonModel saveModel;
@@ -33,7 +35,8 @@ class FavoriteCard extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 20
                       ),
-                    )
+                    ),
+
                   ],
 
                 ),

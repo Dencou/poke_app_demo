@@ -3,7 +3,6 @@ import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:localstore/localstore.dart';
 
-
 class SavePokemonsService {
 
   final db = Localstore.instance;
@@ -28,5 +27,8 @@ class SavePokemonsService {
     pokeSave.setSavedPokemons(l);
     return l;
   }
+
+
+
 }
 var savePokemonsService = SavePokemonsService();
