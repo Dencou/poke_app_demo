@@ -64,7 +64,7 @@ class PokemonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 200),
+                  padding: EdgeInsets.only(top: 150),
 
                   //image & stats stack
                   child: Stack(

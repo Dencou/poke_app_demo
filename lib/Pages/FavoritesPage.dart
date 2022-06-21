@@ -11,11 +11,13 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
-        ],
-      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
+          ],
+        ),
+      )
     );
   }
 }

@@ -12,10 +12,14 @@ abstract class SavePokemonsBase with Store {
 
   @action
   void savePokemons(SaveModel savedPokemon){
-    savedPokemons = [
-      ...savedPokemons,
-      savedPokemon
-    ];
+    if(this.savedPokemons.contains(savedPokemon.id)){
+      print("nonono");
+    }else{
+      savedPokemons = [
+        ...savedPokemons,
+        savedPokemon
+      ];
+    }
   }
 
   @action

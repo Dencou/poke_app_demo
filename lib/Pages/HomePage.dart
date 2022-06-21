@@ -19,9 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
-    pokeService.getPokemonById(1);
-
+    var a = pokeService.getPokemonById(1);
 
     final PageController controller = PageController();
 
