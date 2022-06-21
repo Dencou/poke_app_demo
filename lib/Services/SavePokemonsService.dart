@@ -6,9 +6,10 @@ import 'package:localstore/localstore.dart';
 class SavePokemonsService {
 
   final db = Localstore.instance;
-  final collection = 'poke';
+  final collection = 'pokes';
 
   createPokemon(PokemonModel poke) async {
+    print(poke.id);
     final id = db.collection(collection).doc().id;
     await db.collection(collection).doc(id).set(poke.toDynamic());
   }

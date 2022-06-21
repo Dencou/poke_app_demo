@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:poke_app_demo/Pages/DetailedPokemonPage.dart';
 import 'package:poke_app_demo/Stores/pokemons.dart';
 import 'package:poke_app_demo/Widgets/FavoriteCard.dart';
 
@@ -20,11 +23,12 @@ class FavoritePage extends StatelessWidget {
         title: const Text("My Favorites",style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
-          ],
-        ),
+        child:  Column(
+            children: [
+              ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
+
+            ],
+          ),
       )
     );
   }

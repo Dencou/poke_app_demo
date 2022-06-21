@@ -12,7 +12,6 @@ abstract class SavePokemonsBase with Store {
 
   @action
   void savePokemons(PokemonModel savedPokemon){
-
     savedPokemons = [
       ...savedPokemons,
       savedPokemon
