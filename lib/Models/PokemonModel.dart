@@ -58,7 +58,7 @@ class PokemonModel {
     } else if(type == "flying"){
       return Colors.lightBlue;
     }else if(type == "normal"){
-      return Colors.grey;
+      return Colors.grey.shade500;
     }else if(type == "poison"){
       return Colors.deepPurple;
     }

@@ -38,6 +38,11 @@ class PokemonWidget extends StatelessWidget {
                   onPressed: () async {
                     Get.to(const FavoritePage());
                   },
+                  style: ElevatedButton.styleFrom(
+                    elevation : 0,
+                    primary: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  ),
                   icon: const Icon( // <-- Icon
                     Icons.heart_broken,
                     size: 24.0,
@@ -53,14 +58,16 @@ class PokemonWidget extends StatelessWidget {
               children: [
                 Text(
                   "Pokemon nro: ${pokemon.id.toString()}",
-                  style: TextStyle(color: textColor
+                  style: TextStyle(
+                      color: textColor
                   ),
                 ),
                 Text(
                   pokemon.name,
                   style: TextStyle(
                       color: textColor,
-                      fontSize: 26),
+                      fontSize: 26
+                  ),
                 ),
               ],
 
@@ -164,6 +171,7 @@ class PokemonWidget extends StatelessWidget {
                                 ElevatedButton(onPressed: () async{
                                   savePokemonsService.createPokemon(pokemon);
                                 },
+
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.black54,
                                     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),

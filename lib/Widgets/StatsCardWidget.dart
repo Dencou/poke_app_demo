@@ -51,6 +51,8 @@ class StatsCardWidget extends StatelessWidget {
                       child: Text(
                         hint,
                         textAlign: TextAlign.center,
+                        style:TextStyle(color: Colors.white),
+
                       ),
                     ),
                   ),
@@ -59,6 +61,7 @@ class StatsCardWidget extends StatelessWidget {
                     child: Text(
                       res,
                       textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
                     ),
                   )
                 ],

@@ -18,7 +18,10 @@ class FavoritePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Liked Pokemons"),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: const Text("My Favorites",style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
         child: Column(
