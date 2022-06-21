@@ -19,14 +19,13 @@ class FavoritePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         title: const Text("My Favorites",style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
         child:  Column(
             children: [
               ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
-
             ],
           ),
       )

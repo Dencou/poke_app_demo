@@ -27,5 +27,6 @@ class PokeService{
     pokeStore.addPokemon(pokemonModel);
 
   }
+  
 }
 var pokeService = PokeService();
