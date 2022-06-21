@@ -7,13 +7,11 @@ import 'package:localstore/localstore.dart';
 class SavePokemonsService {
 
   final db = Localstore.instance;
-
   final collection = 'poke';
 
   createPokemon(PokemonModel poke) async {
     final id = db.collection(collection).doc().id;
 
-    print('save');
     await db.collection(collection).doc(id).set(poke.toDynamic());
   }
 
@@ -31,8 +29,5 @@ class SavePokemonsService {
     pokeSave.setSavedPokemons(l);
     return l;
   }
-
-
-
 }
 var savePokemonsService = SavePokemonsService();

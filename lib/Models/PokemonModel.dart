@@ -35,6 +35,7 @@ class PokemonModel {
       "colorType": colorType,
     };
   }
+
 // no se me ocurrio otra cosa jaja
   Color getColor(){
     if(type == "fire"){

@@ -34,5 +34,6 @@ class PokeService{
   }
 
 
+
 }
 var pokeService = PokeService();

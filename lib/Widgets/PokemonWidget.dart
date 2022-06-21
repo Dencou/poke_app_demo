@@ -167,7 +167,7 @@ class PokemonWidget extends StatelessWidget {
                                     StatsCardBorderWidget(
                                         inside: Center(
                                           child: Text(
-                                            "type: ${pokemon.type.toString()}",
+                                            "Type: ${pokemon.type.toString()}",
                                             textAlign: TextAlign.center,)
                                           ,)
                                     ),
@@ -177,7 +177,6 @@ class PokemonWidget extends StatelessWidget {
                                 ElevatedButton(onPressed: () async{
                                   savePokemonsService.createPokemon(pokemon);
                                 },
-
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.black54,
                                     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),

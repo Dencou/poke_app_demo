@@ -12,9 +12,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
+
   @override
   Widget build(BuildContext context) {
+
     var a = pokeService.getPokemonById(1);
+
     final PageController controller = PageController();
 
     return Scaffold(
@@ -24,9 +29,10 @@ class _HomePageState extends State<HomePage> {
               ){
           return PageView(
             onPageChanged: (currentPageNumber) {
-              var pageCount =  pokeStore.pokemons.length - 1;
+              var pageCount =  pokeStore.pokemons.length - 1 ;
               var id = pokeStore.pokemons[pageCount].id += 1;
               print("page count =========> ${pageCount}", );
+              print("id =========> ${id}", );
               pokeService.getPokemonById(id);
 
             },
