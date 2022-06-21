@@ -13,13 +13,13 @@ mixin _$SavePokemons on SavePokemonsBase, Store {
       Atom(name: 'SavePokemonsBase.savedPokemons', context: context);
 
   @override
-  List<SaveModel> get savedPokemons {
+  List<PokemonModel> get savedPokemons {
     _$savedPokemonsAtom.reportRead();
     return super.savedPokemons;
   }
 
   @override
-  set savedPokemons(List<SaveModel> value) {
+  set savedPokemons(List<PokemonModel> value) {
     _$savedPokemonsAtom.reportWrite(value, super.savedPokemons, () {
       super.savedPokemons = value;
     });
@@ -29,7 +29,7 @@ mixin _$SavePokemons on SavePokemonsBase, Store {
       ActionController(name: 'SavePokemonsBase', context: context);
 
   @override
-  void savePokemons(SaveModel savedPokemon) {
+  void savePokemons(PokemonModel savedPokemon) {
     final _$actionInfo = _$SavePokemonsBaseActionController.startAction(
         name: 'SavePokemonsBase.savePokemons');
     try {

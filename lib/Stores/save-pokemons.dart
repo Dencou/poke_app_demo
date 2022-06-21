@@ -8,10 +8,10 @@ class SavePokemons = SavePokemonsBase with _$SavePokemons;
 
 abstract class SavePokemonsBase with Store {
   @observable
-  List<SaveModel> savedPokemons = [];
+  List<PokemonModel> savedPokemons = [];
 
   @action
-  void savePokemons(SaveModel savedPokemon){
+  void savePokemons(PokemonModel savedPokemon){
     if(this.savedPokemons.contains(savedPokemon.id)){
       print("nonono");
     }else{

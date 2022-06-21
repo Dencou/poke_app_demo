@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           return PageView(
             onPageChanged: (currentPageNumber) {
               var pageCount =  pokeStore.pokemons.length - 1;
-              var id = pokeStore.pokemons[0].id += 1;
+              var id = pokeStore.pokemons[pageCount].id + 1;
               pokeService.getPokemonById(id);
 
               //if(currentPageNumber == pageCount){

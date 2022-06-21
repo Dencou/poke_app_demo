@@ -22,6 +22,7 @@ class PokemonWidget extends StatelessWidget {
   Color textColor = Colors.white;
 
 
+
   @override
   Widget build(BuildContext context) {
 
@@ -99,27 +100,27 @@ class PokemonWidget extends StatelessWidget {
                                         height: 60,
                                         width: 60,
                                         radius: 8,
-                                        color: pokemon.colorType,
+                                        color: pokemon.getColor(),
                                         hint: "Attack",
                                         onlyRight: false,
                                         res: pokemon.attack.toString(),
                                       ),
                                     ),
                                     Spacer(),
-                                    StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: pokemon.colorType, hint: "defense",onlyRight: false, res: pokemon.defense.toString(),),),
+                                    StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: pokemon.getColor(), hint: "defense",onlyRight: false, res: pokemon.defense.toString(),),),
                                   ],
                                 ),
                                 SizedBox(height: 20,),
                                 Row(
                                   children: [
-                                    StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: pokemon.colorType, hint: "HP",onlyRight: false, res: pokemon.hp.toString() ,),),
+                                    StatsCardBorderWidget(inside: StatsCardWidget(height: 60, width: 60, radius: 8, color: pokemon.getColor(), hint: "HP",onlyRight: false, res: pokemon.hp.toString() ,),),
                                     Spacer(),
                                     StatsCardBorderWidget(inside: Center(child: Text("type: ${pokemon.type.toString()}", textAlign: TextAlign.center,),)),
                                   ],
                                 ),
                                 SizedBox(height: 30,),
                                 ElevatedButton(onPressed: () async{
-                                  savePokemonsService.savePokemonss();
+                                  savePokemonsService.createPokemon(pokemon);
                                   //savePokemonsService.savePokemons(SaveModel(id:pokemon.id, name: pokemon.name, sprites: pokemon.sprite_front));
                                   //Get.to(FavoritePage());
 

@@ -62,7 +62,7 @@ class PokeService{
         pokemon["stats"][5]["base_stat"],
         pokemon["sprites"]["front_default"],
         pokemon["types"][0]["type"]["name"],
-        color
+        pokemon["types"][0]["type"]["name"]
     );
 
     pokeStore.addPokemon(pokemonModel);

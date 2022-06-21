@@ -34,7 +34,7 @@ class StatsCardWidget extends StatelessWidget {
                     width: 80,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: pokeStore.pokemons[0].colorType,
+                      color: pokeStore.pokemons[0].getColor(),
                       borderRadius: BorderRadius.all(Radius.circular(7),
                     ),
                   ),
