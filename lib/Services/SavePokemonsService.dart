@@ -35,15 +35,5 @@ class SavePokemonsService {
 
 
 
-
-  savePokemons(PokemonModel saveModel){
-    if(pokeSave.savedPokemons.contains(saveModel.name)){
-      return;
-    }else{
-      pokeSave.savePokemons(saveModel);
-    }
-
-  }
-
 }
 var savePokemonsService = SavePokemonsService();

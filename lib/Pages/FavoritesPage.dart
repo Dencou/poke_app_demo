@@ -17,6 +17,9 @@ class FavoritePage extends StatelessWidget {
     savePokemonsService.findAll().then((value) => print(value));
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Liked Pokemons"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

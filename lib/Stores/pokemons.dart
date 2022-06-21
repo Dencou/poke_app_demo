@@ -21,7 +21,6 @@ abstract class PokeStoreBase with Store {
 
   @action
   void setPokemons(pokemons) {
-
     this.pokemons = pokemons;
 
   }

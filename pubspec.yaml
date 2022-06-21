@@ -41,6 +41,7 @@ dependencies:
   flutter_mobx: ^2.0.6+1
   shared_preferences: ^2.0.15
   localstore: ^1.2.3
+  string_to_color: ^1.0.2
 
 
 

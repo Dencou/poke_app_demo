@@ -22,7 +22,7 @@ class FavoriteCard extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  color: saveModel.getColor(),
                   borderRadius: BorderRadius.circular(30),),
                 width: double.infinity,
                 child: Row(

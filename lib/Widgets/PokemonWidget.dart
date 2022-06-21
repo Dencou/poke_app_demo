@@ -18,12 +18,7 @@ class PokemonWidget extends StatelessWidget {
   PokemonModel pokemon;
   PokemonWidget({required this.pokemon});
 
-
   Color textColor = Colors.white;
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +37,7 @@ class PokemonWidget extends StatelessWidget {
               children: [
                 ElevatedButton.icon(
                   onPressed: () async {
-                    Get.to(FavoritePage());
+                    Get.to(const FavoritePage());
                   },
                   icon: const Icon( // <-- Icon
                     Icons.heart_broken,
@@ -68,7 +63,7 @@ class PokemonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 150),
+                  padding: const EdgeInsets.only(top: 150),
 
                   //image & stats stack
                   child: Stack(
@@ -88,10 +83,10 @@ class PokemonWidget extends StatelessWidget {
                       ),
 
                       Padding(
-                          padding: EdgeInsets.only(top: 100),
+                          padding: const EdgeInsets.only(top: 100),
                           // stats column
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             //Stats
                             child: Column(
                               children: [
@@ -150,7 +145,8 @@ class PokemonWidget extends StatelessWidget {
                                 ElevatedButton(onPressed: () async{
                                   savePokemonsService.createPokemon(pokemon);
                                 },
-                                  child: const Text("Yo te elijo :D"), style: ElevatedButton.styleFrom(
+                                  child: const Text("Yo te elijo :D"),
+                                  style: ElevatedButton.styleFrom(
                                     primary: Colors.black54,
                                     padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
                                 ),)
