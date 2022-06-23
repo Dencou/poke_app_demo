@@ -32,11 +32,16 @@ class PokeService{
 
   }
 
-  // Future typeStrongWeak()async{
-  //   var url = Uri.parse('https://pokeapi.co/api/v2/type/${pokeSave})
-  //
-  //
-  // }
+  Future typeStrongWeak(id)async{
+    var url = Uri.parse(pokeSave.savedPokemons[id].typeUrl);
+    var response = await http.get(url);
+    var responsejson =  json.decode(response.body);
+
+    var doubleDamageFrom = List.from(responsejson['damage_relations']['double_damage_from'].map((e) => e['name'])).toList();
+    var doubleDamageTo = List.from(responsejson['damage_relations']['double_damage_from'].map((e) => e['name'])).toList();
+
+
+  }
 
 }
 var pokeService = PokeService();

@@ -134,7 +134,7 @@ class DetailedPokemonPage extends StatelessWidget {
 
                             ]
                             ),
-                            Text("test"),
+                            const Text("test"),
 
 
                           ],
