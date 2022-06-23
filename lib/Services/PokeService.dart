@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:poke_app_demo/Models/PokemonModel.dart';
+import 'package:poke_app_demo/Stores/save-pokemons.dart';
 
 
 
@@ -14,7 +15,6 @@ class PokeService{
     var pokemon = json.decode(response.body);
 
 
-
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
@@ -24,12 +24,19 @@ class PokeService{
         pokemon["sprites"]["front_default"],
         pokemon["sprites"]["back_default"],
         pokemon["types"][0]["type"]["name"],
+        pokemon["types"][0]["type"]["url"],
         0xFFB74093
     );
 
     pokeStore.addPokemon(pokemonModel);
 
   }
+
+  // Future typeStrongWeak()async{
+  //   var url = Uri.parse('https://pokeapi.co/api/v2/type/${pokeSave})
+  //
+  //
+  // }
 
 }
 var pokeService = PokeService();

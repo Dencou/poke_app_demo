@@ -131,8 +131,10 @@ class DetailedPokemonPage extends StatelessWidget {
                                     )
                                 ),
 
+
                             ]
                             ),
+                            Text("test"),
 
 
                           ],
@@ -147,20 +149,26 @@ class DetailedPokemonPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 5, left: 10,right: 10),
               child: Container(
-                  height: 350,
+
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                child: Column(
-                  children: [
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                      Text("Bulbasaur is a pokemon type ${a.type}, he's week against fire type but strong against Ground", textAlign: TextAlign.center,)
 
-                  ],
+                    ],
+                  ),
+                )
                 ),
 
               ),
-            )
+
 
           ],
         ),
