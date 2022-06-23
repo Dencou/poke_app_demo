@@ -67,9 +67,7 @@ class PokemonWidget extends StatelessWidget {
                   ),
                   label: const Text('My Favorites'), // <-- Text
                 ),
-
               ],
-
             ),
             //top texts
             Column(
@@ -112,7 +110,7 @@ class PokemonWidget extends StatelessWidget {
                           )
                       ),
                       Positioned(
-                        top: -80,
+                        top: -100,
                         child: Image.network(
                           pokemon.sprite_front,
                           height: 200,
@@ -121,14 +119,10 @@ class PokemonWidget extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                          padding: const EdgeInsets.only(
-                              top: 100
-                          ),
+                          padding: const EdgeInsets.only(top: 100),
                           // stats column
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             //Stats
                             child: Column(
                               children: [
@@ -196,12 +190,10 @@ class PokemonWidget extends StatelessWidget {
                                 const SizedBox(height: 30,),
                                 ElevatedButton(onPressed: () async{
                                   Get.snackbar(
-
                                       "Success",
                                       "Added successfully to favorites",
                                       backgroundColor: Colors.grey,
                                       colorText: Colors.white,
-
                                   );
                                   savePokemonsService.createPokemon(pokemon);
                                 },
