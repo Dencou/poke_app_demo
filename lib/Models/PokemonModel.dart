@@ -10,6 +10,7 @@ class PokemonModel {
   int hp;
   String type;
   String typeUrl;
+  List abilities;
   String sprite_front;
   String sprite_back;
   int colorType;
@@ -24,6 +25,7 @@ class PokemonModel {
       this.sprite_back,
       this.type,
       this.typeUrl,
+      this.abilities,
       this.colorType,
     );
 
@@ -38,6 +40,7 @@ class PokemonModel {
       "sprite_back":sprite_back,
       "type": type,
       "typeUrl":typeUrl,
+      "abilities":abilities,
       "colorType": colorType,
     };
   }
@@ -86,6 +89,7 @@ class PokemonModel {
         e["sprite_back"],
         e["type"],
         e["typeUrl"],
+        e["abilities"],
         e["colorType"]
     );
   }

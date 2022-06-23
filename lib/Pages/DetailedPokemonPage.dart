@@ -144,7 +144,9 @@ class DetailedPokemonPage extends StatelessWidget {
                               infinity: true,
                                 inside: Center(
                                   child: Text(
-                                    'Abilities: ${pokemon.type}',
+                                    'Abilities: ${pokemon.abilities.map(
+                                            (e) => e["ability"]["name"]
+                                    ).join(",")}',
                                     textAlign: TextAlign.center,
                                   ),
                                 )
@@ -159,14 +161,13 @@ class DetailedPokemonPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 5, left: 10,right: 10),
               child: Container(
-
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                 child: Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(30),
                   child: Column(
                     children: [
                       const Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),

@@ -14,7 +14,7 @@ class PokeService{
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
 
-    print("ability ======> ${pokemon["abilities"][0]["ability"]["name"]}");
+    print("ability ======> ${pokemon["abilities"]}");
 
 
     PokemonModel pokemonModel = PokemonModel(
@@ -27,6 +27,7 @@ class PokeService{
         pokemon["sprites"]["back_default"],
         pokemon["types"][0]["type"]["name"],
         pokemon["types"][0]["type"]["url"],
+        pokemon["abilities"],
         0xFFB74093
     );
 
