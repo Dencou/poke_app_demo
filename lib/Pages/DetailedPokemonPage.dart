@@ -80,6 +80,7 @@ class DetailedPokemonPage extends StatelessWidget {
                             Row(
                               children: [
                                 StatsCardBorderWidget(
+                                    infinity: false,
                                     inside: StatsCardWidget(
                                       height: 80,
                                       width: 80,
@@ -94,6 +95,7 @@ class DetailedPokemonPage extends StatelessWidget {
                                 ),
                                 const Spacer(),
                                 StatsCardBorderWidget(
+                                    infinity: false,
                                     inside: StatsCardWidget(
                                       height: 80,
                                       width: 80,
@@ -112,6 +114,7 @@ class DetailedPokemonPage extends StatelessWidget {
                             Row(
                               children: [
                                 StatsCardBorderWidget(
+                                  infinity: false,
                                     inside: StatsCardWidget(
                                       height: 80,
                                       width: 80,
@@ -126,6 +129,7 @@ class DetailedPokemonPage extends StatelessWidget {
                                 ),
                                 const Spacer(),
                                 StatsCardBorderWidget(
+                                    infinity: false,
                                     inside: Center(
                                       child: Text(
                                           'Type:${pokemon.type}',
@@ -135,7 +139,16 @@ class DetailedPokemonPage extends StatelessWidget {
                                 ),
                             ]
                             ),
-                            const Text(""),
+                            SizedBox(height: 20,),
+                            StatsCardBorderWidget(
+                              infinity: true,
+                                inside: Center(
+                                  child: Text(
+                                    'Abilities: ${pokemon.type}',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                )
+                            ),
                           ],
                         ),
                       )
@@ -157,7 +170,8 @@ class DetailedPokemonPage extends StatelessWidget {
                   child: Column(
                     children: [
                       const Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                      Text("${pokemon.name} is a pokemon type ${pokemon.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageTo.join(", ")}", textAlign: TextAlign.center,)
+                      Text("${pokemon.name} is a pokemon type ${pokemon.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageTo.join(", ")}",
+                        textAlign: TextAlign.start,)
 
                     ],
                   ),

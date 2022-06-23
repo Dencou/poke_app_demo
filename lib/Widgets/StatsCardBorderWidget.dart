@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 class StatsCardBorderWidget extends StatelessWidget {
 
   Widget inside;
+  bool infinity;
 
-  StatsCardBorderWidget({required this.inside});
+  StatsCardBorderWidget({required this.inside, required this.infinity});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:155,
+      width: infinity ? double.infinity : 155,
       constraints: const BoxConstraints(
         minHeight: 60
       ),

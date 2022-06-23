@@ -135,6 +135,7 @@ class PokemonWidget extends StatelessWidget {
                                 Row(
                                   children: [
                                     StatsCardBorderWidget(
+                                      infinity: false,
                                       inside: StatsCardWidget(
                                         height: 60,
                                         width: 60,
@@ -149,6 +150,7 @@ class PokemonWidget extends StatelessWidget {
                                     ),
                                     const Spacer(),
                                     StatsCardBorderWidget(
+                                      infinity: false,
                                       inside: StatsCardWidget(
                                         height: 60,
                                         width: 60,
@@ -167,6 +169,7 @@ class PokemonWidget extends StatelessWidget {
                                 Row(
                                   children: [
                                     StatsCardBorderWidget(
+                                      infinity: false,
                                       inside: StatsCardWidget(
                                         height: 60,
                                         width: 60,
@@ -181,6 +184,7 @@ class PokemonWidget extends StatelessWidget {
                                     ),
                                     const Spacer(),
                                     StatsCardBorderWidget(
+                                        infinity: false,
                                         inside: Center(
                                           child: Text(
                                             "Type: ${pokemon.type.toString()}",
