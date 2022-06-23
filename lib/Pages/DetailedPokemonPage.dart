@@ -191,13 +191,16 @@ class DetailedPokemonPage extends StatelessWidget {
               onPressed: ()=>{ print("delete") },
             )
                 :
-            ElevatedButton(
-              child: Text("Add to favorites"),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.black54,
-                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+            Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: ElevatedButton(
+                child: Text("Add to favorites"),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black54,
+                  padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+                ),
+                onPressed: ()=>{ savePokemonsService.createPokemon(pokemon) },
               ),
-              onPressed: ()=>{ savePokemonsService.createPokemon(pokemon) },
             )
           ],
         ),

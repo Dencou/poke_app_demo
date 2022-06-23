@@ -31,6 +31,7 @@ class PokeService{
     pokeStore.addPokemon(pokemonModel);
 
     if(search == true){
+      pokeStore.setSearch(pokemonModel);
 
     }
 
@@ -38,9 +39,10 @@ class PokeService{
 
   Future typeStrongWeak(id)async{
     print("id ======>$id");
+    print(pokeSave.savedPokemons.length);
+    //wrong comparison
 
-
-    var url = Uri.parse(pokeStore.pokemons[id].typeUrl);
+    var url = Uri.parse(pokeSave.savedPokemons.firstWhere((pokemon) => pokemon.id == id).typeUrl);
     print(url);
     var response = await http.get(url);
     var responsejson =  json.decode(response.body);

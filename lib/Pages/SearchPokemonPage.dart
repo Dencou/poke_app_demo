@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:poke_app_demo/Models/PokemonModel.dart';
 
 import '../Services/PokeService.dart';
 import '../Stores/pokemons.dart';
@@ -16,7 +18,7 @@ class SearchPokemonPage extends StatefulWidget {
 class _SearchPokemonPageState extends State<SearchPokemonPage> {
   @override
   Widget build(BuildContext context) {
-    var pokemon = pokeStore.pokemons.firstWhere((element) => element.id == pokeStore.pokemons[0].id);
+    PokemonModel pokemon = pokeStore.searchPokemon;
 
     return Scaffold(
         appBar: AppBar(
@@ -42,7 +44,11 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
               ),
             )
         ),
-        body: pokeStore.pokemons.isNotEmpty ? FavoriteCard(saveModel: pokemon,) : Text("Search for a pokemon now!")
+        body: pokemon.name != null
+            ? FavoriteCard(saveModel: pokemon,)
+            : Center(
+          child: Text("Search for a pokemon now!", textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),),
+        )
     );
   }
   }
