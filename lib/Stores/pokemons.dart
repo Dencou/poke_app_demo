@@ -11,12 +11,24 @@ abstract class PokeStoreBase with Store {
   @observable
   List<PokemonModel> pokemons = [];
 
+  @observable
+  List doubleDamageFrom = [];
+
+  @observable
+  List doubleDamageTo = [];
+
   @action
   void addPokemon(PokemonModel pokemon){
     pokemons = [
       ...pokemons,
       pokemon
     ];
+  }
+
+  @action
+  void setDoubleDamage(List doubleDamageFrom, List doubleDamageTo){
+    this.doubleDamageTo = doubleDamageTo;
+    this.doubleDamageFrom = doubleDamageFrom;
   }
 
   @action

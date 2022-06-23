@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Pages/DetailedPokemonPage.dart';
 
+import '../Services/PokeService.dart';
 import '../Services/SavePokemonsService.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -15,10 +16,10 @@ class FavoriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=>{
-        print("id passed ======> ${saveModel.id}"),
+      // whet tapped it awaits the typeStrongWeak request, and then it navigates
+      onTap: () async =>{
+        await pokeService.typeStrongWeak(saveModel.id),
         Get.to(DetailedPokemonPage(saveModel.id)),
-
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 10),

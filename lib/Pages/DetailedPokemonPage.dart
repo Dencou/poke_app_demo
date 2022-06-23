@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Services/PokeService.dart';
+import 'package:poke_app_demo/Stores/pokemons.dart';
 import 'package:poke_app_demo/Stores/save-pokemons.dart';
 import 'package:poke_app_demo/Widgets/FavoriteCard.dart';
 import 'package:poke_app_demo/Widgets/StatsCardBorderWidget.dart';
@@ -12,9 +14,12 @@ class DetailedPokemonPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var a = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
+    pokeService.typeStrongWeak(id);
 
     return Scaffold(
+
       backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -72,7 +77,6 @@ class DetailedPokemonPage extends StatelessWidget {
                         //Stats
                         child: Column(
                           children: [
-                            Text('hola'),
                             Row(
                               children: [
                                 StatsCardBorderWidget(
@@ -102,7 +106,6 @@ class DetailedPokemonPage extends StatelessWidget {
                                       blackHint: false,
                                     )
                                 ),
-
                               ],
                             ),
                             const SizedBox(height: 20,),
@@ -130,19 +133,13 @@ class DetailedPokemonPage extends StatelessWidget {
                                       ),
                                     )
                                 ),
-
-
                             ]
                             ),
-                            const Text("test"),
-
-
+                            const Text(""),
                           ],
                         ),
                       )
                   ),
-
-
                 ],
               ),
             ),
@@ -160,7 +157,7 @@ class DetailedPokemonPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                      Text("Bulbasaur is a pokemon type ${a.type}, he's week against fire type but strong against Ground", textAlign: TextAlign.center,)
+                      Text("${a.name} is a pokemon type ${a.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageFrom.join(", ")}", textAlign: TextAlign.center,)
 
                     ],
                   ),

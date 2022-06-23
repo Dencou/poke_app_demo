@@ -33,12 +33,20 @@ class PokeService{
   }
 
   Future typeStrongWeak(id)async{
-    var url = Uri.parse(pokeSave.savedPokemons[id].typeUrl);
+    print(id);
+
+    var url = Uri.parse(pokeStore.pokemons[id].typeUrl);
     var response = await http.get(url);
     var responsejson =  json.decode(response.body);
 
+
+
     var doubleDamageFrom = List.from(responsejson['damage_relations']['double_damage_from'].map((e) => e['name'])).toList();
-    var doubleDamageTo = List.from(responsejson['damage_relations']['double_damage_from'].map((e) => e['name'])).toList();
+    var doubleDamageTo = List.from(responsejson['damage_relations']['double_damage_to'].map((e) => e['name'])).toList();
+    print("Double damage to ============> $doubleDamageTo");
+    pokeStore.setDoubleDamage(doubleDamageFrom, doubleDamageTo);
+
+
 
 
   }

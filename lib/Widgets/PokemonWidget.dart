@@ -191,6 +191,14 @@ class PokemonWidget extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 30,),
                                 ElevatedButton(onPressed: () async{
+                                  Get.snackbar(
+
+                                      "Success",
+                                      "Added successfully to favorites",
+                                      backgroundColor: Colors.grey,
+                                      colorText: Colors.white,
+
+                                  );
                                   savePokemonsService.createPokemon(pokemon);
                                 },
                                   style: ElevatedButton.styleFrom(
