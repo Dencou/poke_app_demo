@@ -13,7 +13,7 @@ class PokeService{
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
 
-    print(pokemon["sprites"]["back_default"]);
+
 
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],

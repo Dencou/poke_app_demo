@@ -42,25 +42,25 @@ class PokemonModel {
 // no se me ocurrio otra cosa jaja
   Color getColor(){
     if(type == "fire"){
-      return Colors.red;
+      return Colors.red.shade400;
     }else if(type == "water"){
       return Colors.blue;
     }else if(type == "grass"){
-      return Colors.green;
+      return Colors.green.shade400;
     }else if(type == "fairy"){
       return Colors.purpleAccent;
     }else if(type == "electric"){
-      return Colors.yellow;
+      return Colors.yellow.shade400;
     }else if(type == "psychic"){
       return Colors.deepPurpleAccent;
     }else if(type == "rock"){
-      return Colors.brown;
+      return Colors.brown.shade400;
     }else if(type == "ground"){
-      return Colors.brown;
+      return Colors.brown.shade400;
     }else if(type == "bug"){
-      return Colors.lightGreen;
+      return Colors.lightGreen.shade400;
     } else if(type == "flying"){
-      return Colors.lightBlue;
+      return Colors.lightBlue.shade400;
     }else if(type == "normal"){
       return Colors.grey.shade500;
     }else if(type == "poison"){
