@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:poke_app_demo/Services/PokeService.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget{
-  const AppBarWidget({Key? key}) : super(key: key);
+  TextEditingController nameController = TextEditingController();
+  AppBarWidget(this.nameController);
+
+
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        title:const Padding(
+        title: Padding(
           padding: EdgeInsets.only(top: 10, bottom: 10),
           child:  TextField(
+            controller: nameController,
+            onSubmitted: (String value) async {
+              await pokeService.getPokemonById(value);
+
+            },
             textInputAction: TextInputAction.go,
-            decoration: InputDecoration(
+            
+            decoration: const InputDecoration(
                 filled: true,
                 prefixIcon: Icon(Icons.search),
                 label: Text("Search your favorite pokemon here!"),
@@ -23,5 +33,5 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget{
 
   }
   @override
-  Size get preferredSize => Size.fromHeight(70);
+  Size get preferredSize => const Size.fromHeight(70);
 }

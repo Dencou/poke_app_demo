@@ -13,7 +13,7 @@ class PokeService{
     var url = Uri.parse('https://pokeapi.co/api/v2/pokemon/$id');
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
-
+    print(pokemon["id"]);
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
