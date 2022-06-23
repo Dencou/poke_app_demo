@@ -29,6 +29,10 @@ class SavePokemonsService {
     return l;
   }
 
+  delete(){
+
+  }
+
 
 
 }
