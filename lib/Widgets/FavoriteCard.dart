@@ -18,7 +18,7 @@ class FavoriteCard extends StatelessWidget {
     return GestureDetector(
       // whet tapped it awaits the typeStrongWeak request, and then it navigates
       onTap: () async =>{
-        await pokeService.typeStrongWeak(saveModel.id),
+        //await pokeService.typeStrongWeak(saveModel.id),
         Get.to(DetailedPokemonPage(saveModel.id)),
       },
       child: Padding(

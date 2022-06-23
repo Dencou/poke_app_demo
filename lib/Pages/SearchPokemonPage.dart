@@ -19,6 +19,7 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
   @override
   Widget build(BuildContext context) {
     PokemonModel pokemon = pokeStore.searchPokemon;
+    print(pokemon);
 
     return Scaffold(
         appBar: AppBar(
@@ -44,8 +45,8 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
               ),
             )
         ),
-        body: pokemon.name != null
-            ? FavoriteCard(saveModel: pokemon,)
+        body: pokemon.name != ""
+            ? FavoriteCard(saveModel: pokemon)
             : Center(
           child: Text("Search for a pokemon now!", textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),),
         )
