@@ -146,7 +146,7 @@ class DetailedPokemonPage extends StatelessWidget {
                                   child: Text(
                                     'Abilities: ${pokemon.abilities.map(
                                             (e) => e["ability"]["name"]
-                                    ).join(",")}',
+                                    ).join(", ")}',
                                     textAlign: TextAlign.center,
                                   ),
                                 )
@@ -173,15 +173,11 @@ class DetailedPokemonPage extends StatelessWidget {
                       const Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
                       Text("${pokemon.name} is a pokemon type ${pokemon.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageTo.join(", ")}",
                         textAlign: TextAlign.start,)
-
                     ],
                   ),
                 )
                 ),
-
               ),
-
-
           ],
         ),
       )

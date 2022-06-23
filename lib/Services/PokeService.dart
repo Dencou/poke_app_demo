@@ -14,9 +14,6 @@ class PokeService{
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
 
-    print("ability ======> ${pokemon["abilities"]}");
-
-
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
