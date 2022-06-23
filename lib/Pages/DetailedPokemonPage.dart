@@ -15,17 +15,17 @@ class DetailedPokemonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var a = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
+    var pokemon = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
     pokeService.typeStrongWeak(id);
 
     return Scaffold(
 
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: pokemon.getColor(),
         appBar: AppBar(
           backgroundColor: Colors.white,
           centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.black),
-          title: Text(a.name,style: TextStyle(color: Colors.black),),
+          title: Text(pokemon.name,style: const TextStyle(color: Colors.black),),
         ),
       body: SingleChildScrollView(
         child: Column(
@@ -50,14 +50,14 @@ class DetailedPokemonPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.network(
-                          a.sprite_front,
+                          pokemon.sprite_front,
                           height: 200,
                           width: 200,
                           fit: BoxFit.fill,
                         ),
                         const SizedBox(width: 30,),
                         Image.network(
-                          a.sprite_back,
+                          pokemon.sprite_back,
                           height: 200,
                           width: 200,
                           fit: BoxFit.fill,
@@ -84,23 +84,23 @@ class DetailedPokemonPage extends StatelessWidget {
                                       height: 80,
                                       width: 80,
                                       radius: 8,
-                                      color: a.getColor(),
-                                      hint: "hola",
-                                      res: "test",
+                                      color: pokemon.getColor(),
+                                      hint: "Attack",
+                                      res: pokemon.attack.toString(),
                                       onlyRight: false,
                                       blackRes: true,
                                       blackHint: false,
                                     )
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 StatsCardBorderWidget(
                                     inside: StatsCardWidget(
                                       height: 80,
                                       width: 80,
                                       radius: 8,
-                                      color: a.getColor(),
-                                      hint: "hola",
-                                      res: "test",
+                                      color: pokemon.getColor(),
+                                      hint: "Defense",
+                                      res: pokemon.defense.toString(),
                                       onlyRight: false,
                                       blackRes: true,
                                       blackHint: false,
@@ -116,9 +116,9 @@ class DetailedPokemonPage extends StatelessWidget {
                                       height: 80,
                                       width: 80,
                                       radius: 8,
-                                      color: a.getColor(),
-                                      hint: "hola",
-                                      res: "test",
+                                      color: pokemon.getColor(),
+                                      hint: "Hp",
+                                      res: pokemon.hp.toString(),
                                       onlyRight: false,
                                       blackRes: true,
                                       blackHint: false,
@@ -126,9 +126,9 @@ class DetailedPokemonPage extends StatelessWidget {
                                 ),
                                 const Spacer(),
                                 StatsCardBorderWidget(
-                                    inside: const Center(
+                                    inside: Center(
                                       child: Text(
-                                          'Type:test',
+                                          'Type:${pokemon.type}',
                                         textAlign: TextAlign.center,
                                       ),
                                     )
@@ -144,7 +144,7 @@ class DetailedPokemonPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 5, left: 10,right: 10),
+              padding: const EdgeInsets.only(top: 5, left: 10,right: 10),
               child: Container(
 
                   width: double.infinity,
@@ -153,11 +153,11 @@ class DetailedPokemonPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                      Text("${a.name} is a pokemon type ${a.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageFrom.join(", ")}", textAlign: TextAlign.center,)
+                      const Text("Details", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                      Text("${pokemon.name} is a pokemon type ${pokemon.type}, he's week against ${pokeStore.doubleDamageFrom.join(", ")} type but strong against ${pokeStore.doubleDamageTo.join(", ")}", textAlign: TextAlign.center,)
 
                     ],
                   ),
