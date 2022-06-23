@@ -13,7 +13,7 @@ class PokeService{
     var url = Uri.parse('https://pokeapi.co/api/v2/pokemon/$id');
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
-    print(pokemon["id"]);
+    print(pokemon["types"][0]["type"]["url"],);
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
@@ -33,7 +33,11 @@ class PokeService{
   }
 
   Future typeStrongWeak(id)async{
+    print("id ======>$id");
+
+
     var url = Uri.parse(pokeStore.pokemons[id].typeUrl);
+    print(url);
     var response = await http.get(url);
     var responsejson =  json.decode(response.body);
 

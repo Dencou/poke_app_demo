@@ -16,10 +16,8 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget{
             controller: nameController,
             onSubmitted: (String value) async {
               await pokeService.getPokemonById(value);
-
             },
             textInputAction: TextInputAction.go,
-            
             decoration: const InputDecoration(
                 filled: true,
                 prefixIcon: Icon(Icons.search),

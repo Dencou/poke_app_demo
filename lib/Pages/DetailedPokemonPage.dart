@@ -7,6 +7,8 @@ import 'package:poke_app_demo/Widgets/FavoriteCard.dart';
 import 'package:poke_app_demo/Widgets/StatsCardBorderWidget.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
+import '../Services/SavePokemonsService.dart';
+
 class DetailedPokemonPage extends StatelessWidget {
 
   int id;
@@ -178,6 +180,25 @@ class DetailedPokemonPage extends StatelessWidget {
                 )
                 ),
               ),
+
+            pokemon != null ?
+            ElevatedButton(
+              child: Text("Remove from favorites"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red.shade800,
+                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+              ),
+              onPressed: ()=>{ print("delete") },
+            )
+                :
+            ElevatedButton(
+              child: Text("Add to favorites"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black54,
+                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+              ),
+              onPressed: ()=>{ savePokemonsService.createPokemon(pokemon) },
+            )
           ],
         ),
       )
