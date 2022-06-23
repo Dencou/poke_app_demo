@@ -12,6 +12,9 @@ abstract class PokeStoreBase with Store {
   List<PokemonModel> pokemons = [];
 
   @observable
+  PokemonModel searchPokemon = PokemonModel(0,"",0,0,0,"","","","",[], 0);
+
+  @observable
   List doubleDamageFrom = [];
 
   @observable
@@ -34,7 +37,13 @@ abstract class PokeStoreBase with Store {
   @action
   void setPokemons(pokemons) {
     this.pokemons = pokemons;
+  }
+  @action
+  void setSearch(PokemonModel pokemon){
+    this.searchPokemon = pokemon;
 
   }
+
+
 }
 var pokeStore = PokeStore();

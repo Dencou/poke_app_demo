@@ -9,11 +9,11 @@ import '../Stores/pokemons.dart';
 
 class PokeService{
 
-  Future getPokemonById(id) async {
+  Future getPokemonById(id, bool search) async {
     var url = Uri.parse('https://pokeapi.co/api/v2/pokemon/$id');
     var response = await http.get(url);
     var pokemon = json.decode(response.body);
-    print(pokemon["types"][0]["type"]["url"],);
+    print(pokemon["name"]);
     PokemonModel pokemonModel = PokemonModel(
         pokemon["id"],
         pokemon["name"],
@@ -29,6 +29,10 @@ class PokeService{
     );
 
     pokeStore.addPokemon(pokemonModel);
+
+    if(search == true){
+
+    }
 
   }
 

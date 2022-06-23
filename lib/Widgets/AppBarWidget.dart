@@ -15,7 +15,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget{
           child:  TextField(
             controller: nameController,
             onSubmitted: (String value) async {
-              await pokeService.getPokemonById(value);
+              await pokeService.getPokemonById(value, true);
             },
             textInputAction: TextInputAction.go,
             decoration: const InputDecoration(

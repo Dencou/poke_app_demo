@@ -6,6 +6,7 @@ import 'package:poke_app_demo/Models/PokemonModel.dart';
 import 'package:poke_app_demo/Pages/FavoritesPage.dart';
 import 'package:poke_app_demo/Services/SavePokemonsService.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
+import '../Pages/SearchPokemonPage.dart';
 import 'StatsCardBorderWidget.dart';
 
 
@@ -36,8 +37,7 @@ class PokemonWidget extends StatelessWidget {
               children: [
                 ElevatedButton.icon(
                   onPressed: () async {
-                    await savePokemonsService.findAll().then((value) => print(value));
-                    Get.to(const FavoritePage());
+                    Get.to(SearchPokemonPage());
                   },
                   style: ElevatedButton.styleFrom(
                     elevation : 0,
