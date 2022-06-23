@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poke_app_demo/Pages/SearchPokemonPage.dart';
 
 import 'Pages/HomePage.dart';
 import 'Services/PokeService.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SearchPokemonPage(),
     );
   }
 }
