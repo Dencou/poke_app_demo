@@ -18,9 +18,8 @@ class SearchPokemonPage extends StatefulWidget {
 class _SearchPokemonPageState extends State<SearchPokemonPage> {
   @override
   Widget build(BuildContext context) {
-    PokemonModel pokemon = pokeStore.searchPokemon;
-    print(pokemon);
 
+    PokemonModel pokemon = pokeStore.searchPokemon;
     return Scaffold(
         appBar: AppBar(
             toolbarHeight: 80,
@@ -29,9 +28,7 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
               child:  TextField(
                 onSubmitted: (String value) async {
                   await pokeService.getPokemonById(value,true);
-
                   setState(() {
-
                   });
                 },
                 textInputAction: TextInputAction.go,
@@ -46,8 +43,8 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
             )
         ),
         body: pokemon.name != ""
-            ? FavoriteCard(saveModel: pokemon)
-            : Center(
+            ? FavoriteCard(saveModel: pokemon, detail: true)
+            : const Center(
           child: Text("Search for a pokemon now!", textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),),
         )
     );

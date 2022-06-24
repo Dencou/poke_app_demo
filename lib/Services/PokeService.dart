@@ -38,12 +38,9 @@ class PokeService{
   }
 
   Future typeStrongWeak(id)async{
-    print("id ======>$id");
-    print(pokeSave.savedPokemons.length);
-    //wrong comparison
 
-    var url = Uri.parse(pokeSave.savedPokemons.firstWhere((pokemon) => pokemon.id == id).typeUrl);
-    print(url);
+    var url = Uri.parse(pokeSave.savedPokemons.firstWhere((pokemon) => pokemon.id == id).typeUrl);;
+
     var response = await http.get(url);
     var responsejson =  json.decode(response.body);
 

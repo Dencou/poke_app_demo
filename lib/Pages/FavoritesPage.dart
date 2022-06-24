@@ -25,7 +25,7 @@ class FavoritePage extends StatelessWidget {
       body: SingleChildScrollView(
         child:  Column(
             children: [
-              ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e,)),
+              ...pokeSave.savedPokemons.map((e) => FavoriteCard(saveModel: e, detail: false,)),
             ],
           ),
       )

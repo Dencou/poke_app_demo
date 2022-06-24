@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    pokeService.getPokemonById(1, false);
+
     return GetMaterialApp(
       title: 'Title Test',
       theme: ThemeData(

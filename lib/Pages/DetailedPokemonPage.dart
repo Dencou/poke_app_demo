@@ -12,16 +12,21 @@ import '../Services/SavePokemonsService.dart';
 class DetailedPokemonPage extends StatelessWidget {
 
   int id;
-  DetailedPokemonPage(this.id);
+  bool detail;
+  DetailedPokemonPage(this.id, this.detail);
 
   @override
   Widget build(BuildContext context) {
 
-    var pokemon = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
+    var pokemon;
+    if(detail == true){
+      pokemon = pokeStore.searchPokemon;
+    }else{
+      pokemon = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
+    }
     pokeService.typeStrongWeak(id);
 
     return Scaffold(
-
       backgroundColor: pokemon.getColor(),
         appBar: AppBar(
           backgroundColor: Colors.white,
