@@ -23,6 +23,7 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
 
     PokemonModel pokemon = pokeStore.searchPokemon;
 
+
     return Scaffold(
         appBar: AppBar(
             toolbarHeight: 80,

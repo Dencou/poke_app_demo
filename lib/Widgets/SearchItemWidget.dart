@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:poke_app_demo/Models/PokemonModel.dart';
 
 import '../Pages/DetailedPokemonPage.dart';
+import '../Services/PokeService.dart';
 
 class SearchItem extends StatelessWidget {
 
@@ -17,9 +18,10 @@ class SearchItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       // whet tapped it awaits the typeStrongWeak request, and then it navigates
-      onTap: () =>{
+      onTap: () async => {
         //await pokeService.typeStrongWeak(saveModel.id),
-        Get.to(DetailedPokemonPage(pokemon.id, true)),
+        await pokeService.typeStrongWeak(pokemon.id),
+        Get.to(DetailedPokemonPage(pokemon, true)),
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 10),

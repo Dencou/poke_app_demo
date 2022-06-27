@@ -20,7 +20,7 @@ class FavoriteCard extends StatelessWidget {
       // whet tapped it awaits the typeStrongWeak request, and then it navigates
       onTap: () =>{
         //await pokeService.typeStrongWeak(saveModel.id),
-        Get.to(DetailedPokemonPage(saveModel.id, detail)),
+        Get.to(DetailedPokemonPage(saveModel, detail)),
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 10),

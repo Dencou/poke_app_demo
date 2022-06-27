@@ -7,28 +7,18 @@ import 'package:poke_app_demo/Widgets/FavoriteCard.dart';
 import 'package:poke_app_demo/Widgets/StatsCardBorderWidget.dart';
 import 'package:poke_app_demo/Widgets/StatsCardWidget.dart';
 
+import '../Models/PokemonModel.dart';
 import '../Services/SavePokemonsService.dart';
 
 class DetailedPokemonPage extends StatelessWidget {
 
-  int id;
+
+  PokemonModel pokemon;
   bool detail;
-  DetailedPokemonPage(this.id, this.detail);
+  DetailedPokemonPage(this.pokemon, this.detail);
 
   @override
   Widget build(BuildContext context) {
-
-    var pokemon;
-
-    if(detail == true){
-      pokeService.typeStrongWeak(id);
-      pokemon = pokeStore.searchPokemon;
-
-    }else{
-      pokemon = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
-      pokeService.savedTypeStrongWeak(id);
-    }
-
 
     return Scaffold(
       backgroundColor: pokemon.getColor(),
