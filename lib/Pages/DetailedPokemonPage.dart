@@ -19,12 +19,16 @@ class DetailedPokemonPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var pokemon;
+
     if(detail == true){
+      pokeService.typeStrongWeak(id);
       pokemon = pokeStore.searchPokemon;
+
     }else{
       pokemon = pokeSave.savedPokemons.firstWhere((element) => element.id == id);
+      pokeService.savedTypeStrongWeak(id);
     }
-    pokeService.typeStrongWeak(id);
+
 
     return Scaffold(
       backgroundColor: pokemon.getColor(),

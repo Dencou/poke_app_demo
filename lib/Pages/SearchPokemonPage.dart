@@ -7,6 +7,7 @@ import '../Services/PokeService.dart';
 import '../Stores/pokemons.dart';
 
 import '../Widgets/FavoriteCard.dart';
+import '../Widgets/SearchItemWidget.dart';
 
 class SearchPokemonPage extends StatefulWidget {
   const SearchPokemonPage({Key? key}) : super(key: key);
@@ -19,7 +20,9 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
   @override
   Widget build(BuildContext context) {
 
+
     PokemonModel pokemon = pokeStore.searchPokemon;
+
     return Scaffold(
         appBar: AppBar(
             toolbarHeight: 80,
@@ -43,7 +46,7 @@ class _SearchPokemonPageState extends State<SearchPokemonPage> {
             )
         ),
         body: pokemon.name != ""
-            ? FavoriteCard(saveModel: pokemon, detail: true)
+            ? SearchItem(pokemon)
             : const Center(
           child: Text("Search for a pokemon now!", textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),),
         )
